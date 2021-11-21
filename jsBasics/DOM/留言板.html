@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            margin: 200px auto;
+            width: 500px;
+        }
+
+        .box1 {
+            float: left;
+            align-self: center;
+            width: 500px;
+        }
+
+        .box2 {
+            float: left;
+            width: 500px;
+        }
+
+        textarea {
+            border: 1px solid green;
+            resize: none;
+            outline: none;
+        }
+
+
+
+        li {
+            width: 500px;
+            line-height: 30px;
+            background-color: rgb(224, 243, 197);
+            border-bottom: 1px solid red;
+        }
+
+        span {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">
+            <textarea name="" id="" cols="30" rows="10"></textarea><button>提交</button>
+        </div>
+
+        <div class="box2">
+            <ol>
+                <li>11111111111<span onclick="de(this)">删除</span></li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        var btn = document.querySelector('button');
+
+        btn.onclick = function () {
+            var txt = document.querySelector('textarea');
+            var ul = document.querySelector('.box2').querySelector('ol');
+            var li = document.createElement('li');
+            li.innerHTML = txt.value + '<span onclick="de(this)">删除</span>';
+            ul.appendChild(li);
+
+        }
+        function de(a) {
+            var li = a.parentNode;
+            var ul = li.parentNode;
+            ul.removeChild(li);
+
+        }
+
+    </script>
+</body>
+
+</html>

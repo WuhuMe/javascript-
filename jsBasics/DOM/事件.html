@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+    <img src="../img/1.jpg" alt="???" />
+    <script>
+        //执行事件的步骤
+        //点击div 控制台输出 我被选中了
+        //1. 获取事件源
+        var div = document.querySelector('div');
+        //2. 绑定事件 注册事件
+        div.onclick = function () {
+            console.log('我被选中了');
+            img1.src = "../img/2.jpg";
+        }
+        div.onmouseover = function () {
+            console.log('鼠标在我上面');
+        }
+        var img1 = document.querySelector('img');
+        console.log(img1);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: relative;
+            margin: 100px auto;
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .box input {
+            width: 250px;
+            height: 30px;
+            outline: none;
+            border: 5px solid;
+            border-color: lightblue;
+        }
+
+
+        #btn {
+            position: absolute;
+            width: 50px;
+            height: 40px;
+            border-color: lightblue;
+            background-color: lightblue;
+        }
+
+        #btn:hover {
+            cursor: pointer;
+            background-color: lightskyblue;
+            border-color: lightskyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" name="" id="" placeholder="搜索"><input type="button" id="btn" value="搜索">
+    </div>
+    <script>
+        var txt = document.querySelectorAll('input');
+        txt[0].onclick = function () {
+            txt[0].placeholder = '';
+            txt[0].style.borderColor = 'pink';
+        }
+        txt[0].onblur = function () {
+            txt[0].placeholder = '搜索';
+            txt[0].style.borderColor = 'lightblue';
+        }
+    </script>
+</body>
+
+</html>

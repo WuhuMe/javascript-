@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<input type="text" id="t0" value="">
+		<input type="text" id="t1" value="">
+		<input type="text" id="t2" value="">
+		<input type="button"  onclick="input()" value="输入">
+		<p id="txt0"></p>
+		<p id="txt1"></p>
+		<p id="txt2"></p>
+	</body>
+	<script type="text/javascript">
+		var a = new Array();
+		var q = ['姓名','年龄','性别'];
+		function input(){
+		for(var i = 0; i < 3; i++){
+			 a[i] = prompt('请输入' + q[i]).toString();
+		}
+	
+		for(var i = 0 ;i < 3; i++){
+			document.getElementById("txt" + i).innerHTML = q[i] + ':' + a[i];
+			
+		}
+			}
+	</script>
+</html>

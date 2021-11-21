@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function reverse(a) {
+            var r = 0;
+            var l = a.length - 1;
+            var temp;
+            while (r < l) {
+                temp = a[l];
+                a[l] = a[r];
+                a[r] = temp;
+                r++;
+                l--;
+            }
+        }
+
+        var a = new Array();
+        for (var i = 0; i < 20; i++) {
+            a[i] = i + 1;
+        }
+        console.log('反转前:' + a);
+        console.log(a.length);
+        reverse(a);
+        console.log(a.length);
+        console.log('反转后:' + a);
+
+        function com() {
+            var jug = parseInt(prompt("1.加法\n2.减法\n3.乘法\n4.除法\n5.退出"));
+            switch (jug) {
+                case 1:
+                    sum();
+                    break;
+                case 2:
+                    dec();
+                    break;
+                case 3:
+                    chen();
+                    break;
+                case 4:
+                    cu();
+                    break;
+                case 5:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function sum() {
+            var a = parseInt(prompt("请输入第一个数"));
+            var b = parseInt(prompt("请输入第二个数"));
+            alert(a + '+' + b + '=' + (a + b));
+        }
+
+        function dec() {
+            var a = parseInt(prompt("请输入第一个数"));
+            var b = parseInt(prompt("请输入第二个数"));
+            alert(a + '-' + b + '=' + (a - b));
+        }
+
+        function chen() {
+            var a = parseFloat(prompt("请输入第一个数"));
+            var b = parseFloat(prompt("请输入第二个数"));
+            alert(a + '*' + b + '=' + (a * b));
+        }
+
+        function cu() {
+            var a = parseFloat(prompt("请输入第一个数"));
+            var b = parseFloat(prompt("请输入第二个数"));
+            alert(a + '/' + b + '=' + (a / b));
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="计算" onclick="com()">
+</body>
+
+</html>

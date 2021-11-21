@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin: 20px auto;
+            position: relative;
+            width: 200px;
+            size: 14px;
+            line-height: 30px;
+            color: rgb(13, 13, 14);
+            text-align: center;
+            background-color: darkgray;
+        }
+
+        .box {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-color: lightblue;
+            overflow: hidden;
+        }
+
+        .v {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background-color: black;
+            z-index: -1;
+        }
+
+        .p {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: black;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <p></p>
+    <div class="box">
+
+
+    </div>
+    <div class="v"></div>
+    <div class="p"></div>
+    <script>
+        var box = document.querySelector('.box');
+        var v = document.querySelector('.v');
+        var po = document.querySelector('.p');
+        var p = document.querySelector('p');
+        document.addEventListener('mousemove', function (e) {
+
+
+            p.innerHTML = 'X:' + e.pageX + ' Y:' + e.pageY;
+
+            v.style.left = e.pageX + 'px';
+            po.style.top = e.pageY + 'px';
+
+        });
+        box.addEventListener('mousedown', function (e) {
+            var x = e.pageX - box.offsetLeft;
+            var y = e.pageY - box.offsetTop;
+            document.addEventListener('mousemove', move);
+            function move(e) {
+                box.style.left = e.pageX - x + 'px';
+                box.style.top = e.pageY - y + 'px';
+            }
+            document.addEventListener('mouseup', function () {
+                document.removeEventListener('mousemove', move);
+            })
+        });
+    </script>
+</body>
+
+</html>

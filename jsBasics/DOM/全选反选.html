@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            margin: 200px auto;
+            width: 500px;
+
+        }
+
+        .head {
+            background-color: rgb(12, 171, 224);
+            border: 1px solid white;
+            border-inline-color: white;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 300px;
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <table border="1">
+            <thead>
+                <tr class="head">
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td width='150px'>商品</td>
+                    <td width='60px'>价格</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td width='150px'>iPhone8</td>
+                    <td width='60px'>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td width='150px'>iPad Pro</td>
+                    <td width='60px'>5000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td width='150px'>iPad Air</td>
+                    <td width='60px'>2000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td width='150px'>Apple Watch</td>
+                    <td width='60px'>2000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <Script>
+        var selectAll = document.querySelector('thead').querySelector('input');
+        var selects = document.querySelector('tbody').querySelectorAll('input');
+        var c = false;
+        console.log(selects);
+        selectAll.onclick = function () {
+            if (selectAll.checked == true) {
+                for (var i = 0; i < selects.length; i++) {
+                    selects[i].checked = true;
+                    flag = 0;
+
+                }
+            }
+            else {
+                for (var i = 0; i < selects.length; i++) {
+                    selects[i].checked = false;
+                    flag = 1;
+
+                }
+            }
+        }
+
+        for (var i = 0; i < selects.length; i++) {
+            selects[i].onclick = function () {
+                console.log(c);
+                for (var i = 0; i < selects.length; i++) {
+                    if (selects[i].checked == true) {
+                        c = true;
+                    }
+                    else {
+                        c = false;
+                    }
+                }
+                if (c == true) {
+                    selectAll.checked = true;
+                } else {
+                    selectAll.checked = false;
+
+                }
+            }
+        }
+
+
+
+    </Script>
+</body>
+
+</html>

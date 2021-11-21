@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid gray;
+            margin: 100px auto;
+        }
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        .box img {
+            width: 22px;
+            position: absolute;
+            top: 5px;
+            right: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <label for=""><img src="../img/hide.jpg" id="img"></label>
+        <input type="password" id="pwd" placeholder="密码">
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var img = document.getElementById('img');
+        var input = document.getElementsByTagName('input');
+        var flag = 1;
+        img.onclick = function () {
+            if (flag == 1) {
+                img.src = '../img/show.jpg';
+                input[0].type = 'text';
+                flag = 0;
+            } else {
+                img.src = '../img/hide.jpg';
+                input[0].type = 'password';
+                flag = 1;
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

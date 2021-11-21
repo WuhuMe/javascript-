@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .fa {
+            width: 100px;
+            height: 100px;
+            margin: 100px;
+            background-color: blanchedalmond;
+            position: relative;
+        }
+
+        .son {
+            width: 50px;
+            height: 50px;
+            background-color: cadetblue;
+            margin: 25px;
+        }
+
+        .box {
+            margin: 200px auto;
+            width: 200px;
+            height: 150px;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fa">
+        <div class="son"></div>
+    </div>
+    <div class="box"></div>
+    <script>
+        /*offset概述
+            offset翻译为偏移量，我们使用offset系列相关属性可以动态的得到该元素的位置(偏移)、大小等
+            -获得元素距离带有定位父元素的位置
+            -获得元素自身的大小
+            -注意：返回的数值都不带单位
+        */
+        /*ele.offsetParent 返回作为钙元素带有定位的父级元素 如果父级都没有定位则返回body
+         ele.offsetTop   返回元素相对带有定位父元素上方的偏移
+         ele.offsetLeft  返回元素相对带有定位父元素左边框的偏移
+         ele.offsetWidth 返回自身包括padding\边框、内容区的宽度，返回数值不带单位
+         ele.offsetHeight    返回自身包括padding、边框、内容区的高度，返回数值不带单位
+         */
+        var fa = document.querySelector('.fa');
+        var son = document.querySelector('.son');
+        var box = document.querySelector('.box');
+        console.log('-----fa--------');
+        console.log(fa.offsetTop);
+        console.log('-----son--------');
+        console.log(son.offsetTop);
+        console.log(son.offsetLeft);
+        console.log('-----box--------');
+        console.log(box.offsetWidth);
+        console.log(box.offsetHeight);
+    </script>
+</body>
+
+</html>

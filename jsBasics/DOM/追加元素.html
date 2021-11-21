@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="inner"></div>
+    <script>
+        var inner = document.querySelector('.inner');
+        /*  for (var i = 0; i < 9999999; i++) {
+                 inner.innerHTML += "<br> <a href='#'>芜湖</a>";
+             }*/
+        /*   var da1 = +new Date();
+           for (var i = 0; i < 5000; i++) {
+               var div = document.createElement('div');
+               div.style.width = '5000px';
+               div.style.height = '20px';
+               div.style.border = '1px solid lightblue';
+               document.body.appendChild(div);
+           }
+           var da2 = +new Date();
+           console.log(da2 - da1);*/
+        var da1 = +new Date();
+        var arr = new Array();
+
+        for (var i = 0; i < 99000; i++) {
+            arr.push('<a href=#>芜湖</a>')
+        }
+        inner.innerHTML = arr.join('');
+        var da2 = +new Date();
+        console.log(da2 - da1);
+    </script>
+</body>
+
+</html>

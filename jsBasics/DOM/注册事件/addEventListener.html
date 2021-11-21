@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin: 200px auto;
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <button>111</button>
+    <button>111</button>
+    <div>
+        1
+    </div>
+    <script>
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.addEventListener('click', show);
+        div.addEventListener('click', show);
+
+
+        function show() {
+            alert('???');
+            btn.disabled = true;
+            div.removeEventListener('click', show);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            color: tan;
+            background-color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <div>时间</div>
+    <button>显示当前时间</button>
+    <script>
+        var btn = document.getElementsByTagName('button');
+        var div = document.querySelector('div');
+
+        btn[0].onclick = function () {
+            console.log('.');
+            var date = new Date();
+            var year = date.getFullYear();
+            var mont = date.getMonth() + 1;
+            var day = date.getDate();
+            var hour = date.getHours();
+            var min = date.getMinutes();
+            var sec = date.getSeconds();
+            mont = mont < 10 ? '0' + mont : mont;
+            day = day < 10 ? '0' + day : day;
+            hour = hour < 10 ? '0' + hour : hour;
+            min = min < 10 ? '0' + min : min;
+            sec = sec < 10 ? '0' + sec : sec;
+            div.innerHTML = year + '年' + mont + '月' + day + '日' + ' ' + hour + ':' + min + ":" + sec;
+        }
+    </script>
+</body>
+
+</html>

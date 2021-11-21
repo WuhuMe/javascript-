@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body onload="rand()">
+    <p>猜数字:(数字范围在1-100之内)</p>
+    <input type="text" id="num" /><span id="sp"></span>
+    <input type="button" value="猜" id="btn" />
+    <script>
+        var num, sum;
+
+        function rand() {
+            num = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+            sum = 0;
+        }
+        var btn = document.getElementById('btn');
+
+        btn.onclick = function check() {
+            var ans = parseInt(document.getElementById("num").value);
+            console.log(num);
+            if (!isNaN(ans)) {
+                sum++;
+            }
+            console.log(sum);
+            if (ans > num) {
+                document.getElementById("sp").innerHTML = '大了';
+            } else if (ans < num) {
+                document.getElementById("sp").innerHTML = '小了';
+            }
+            if (ans == num) {
+                if (sum <= 3) {
+                    document.getElementById("sp").innerHTML = sum + '次就猜对，真牛逼';
+                    rand();
+                } else if (sum > 3 && sum <= 6) {
+                    document.getElementById("sp").innerHTML = sum + '次猜对，海星';
+                    rand();
+                } else {
+                    document.getElementById("sp").innerHTML = sum + '次才猜对????';
+                    rand();
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

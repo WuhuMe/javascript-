@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉菜单</title>
+    <style>
+        .drop-down {
+            width: 50px;
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            display: none;
+
+        }
+
+        .drop-down:hover .dropdown-content {
+            display: block;
+        }
+
+        table {
+            border: 2px solid black;
+            background-color: rgb(224, 147, 31);
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="drop-down">
+        <span>品类</span>
+        <div class="dropdown-content">
+            <table>
+                <tr>
+                    <td><a href="#">111</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">222</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">333</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="drop-down">
+            <span>品类</span>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <td><a href="#">111</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">222</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">333</a></td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+        </div>
+
+</body>
+
+</html>

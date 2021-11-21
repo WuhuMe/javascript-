@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 200px auto;
+            width: 1500px;
+        }
+
+        .box table,
+        tr,
+        td {
+            border: 1px solid rgb(1, 94, 148);
+            border-collapse: collapse;
+            width: 1500px;
+            size: 14px;
+
+            line-height: 30px;
+            text-align: center;
+        }
+
+
+
+        tr:hover {
+            background: rgb(159, 204, 230);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <table>
+            <thead>
+                <tr>
+                    <td width="60px">代码</td>
+                    <td width="320px">名称</td>
+                    <td width="100px">最新公布值</td>
+                    <td width="100px">累计净值</td>
+                    <td width="100px">前单位净值</td>
+                    <td width="100px">净值增长率</td>
+                    <td width="100px">公布日期</td>
+                    <td width="100px">操作</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+
+        </table>
+    </div>
+    <script>
+        function Data(code, name, newprice, countprice, oldprice, pricespeed, day) {
+            this.code = code;
+            this.name = name;
+            this.p1 = newprice;
+            this.p2 = countprice;
+            this.p3 = oldprice;
+            this.p4 = pricespeed;
+            this.da = day;
+        }
+        var d1 = new Data('003526', '农银金辉3个月定期开放债券', 1.075, 1.479, 1.074, '+0.047%', '2019-02-11');
+        var d2 = new Data('123145', '广发理财30天债券B', 2.111, 1.379, 2.074, '+0.217%', '2019-03-11');
+        var d3 = new Data('163417', '兴全合意混合A', 1.475, 1.071, 1.072, '+0.142%', '2019-04-11');
+        var d4 = new Data('100000', '中银证券安静债券A', 1.125, 1.029, 1.444, '+0.442%', '2019-05-11');
+        var d5 = new Data('360020', '广大天添盈月度理财债券B', 1.425, 1.559, 1.374, '+0.333%', '2019-06-11');
+        var array = [
+            { code: '003526', name: '农银金辉3个月定期开放债券', newprice: 1.075, countprice: 1.479, oldprice: 1.074, pricespeed: '+0.047%', day: '2019-02-11' },
+            { code: '123145', name: '广发理财30天债券B', newprice: 2.111, countprice: 1.379, oldprice: 2.074, pricespeed: '+0.217%', day: '2019-03-11' },
+            { code: '163417', name: '兴全合意混合A', newprice: 1.475, countprice: 1.071, oldprice: 1.072, pricespeed: '+0.142%', day: '2019-04-11' },
+            { code: '100000', name: '中银证券安静债券A', newprice: 1.125, countprice: 1.029, oldprice: 1.444, pricespeed: '+0.442%', day: '2019-05-11' },
+            { code: '360020', name: '广大天添盈月度理财债券B', newprice: 1.425, countprice: 1.559, oldprice: 1.374, pricespeed: '+0.333%', day: '2019-06-11' },
+        ]
+        var index = 0;
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i <= array.length; i++) {
+            var tr = document.createElement('tr');
+
+            tbody.appendChild(tr);
+            for (var k in array[i]) {
+                var td = document.createElement('td');
+
+                if (i == 0) {
+                    td.width = '60px';
+                    td.innerHTML = array[i][k];
+                }
+                else if (i == 1) {
+                    td.width = '320px';
+                    td.innerHTML = array[i][k];
+                } else {
+                    td.width = '100px';
+                    td.innerHTML = array[i][k];
+                }
+
+
+                tr.appendChild(td);
+            }
+            td.innerHTML = "<input type = 'checkbox' value='删除'  >";
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

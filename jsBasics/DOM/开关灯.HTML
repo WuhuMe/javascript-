@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .on {
+            background: white;
+        }
+
+        .off {
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="开关灯">
+    <script>
+        var btn = document.querySelector('input');
+        var flag = 1;
+        btn.onclick = function () {
+            if (flag == 1) {
+                document.body.className = 'off';
+                flag = 0;
+            }
+            else {
+                document.body.className = 'on';
+                flag = 1;
+            }
+        }
+    </script>
+</body>
+
+</html>

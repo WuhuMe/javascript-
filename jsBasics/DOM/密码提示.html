@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            margin: 100px auto;
+            width: 500px;
+            height: 30px;
+        }
+
+        .box input {
+            width: 150px;
+        }
+
+        .box label img {
+            visibility: hidden;
+
+        }
+
+        .wrong {
+            color: red;
+        }
+
+        .right {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" value="" placeholder="请输入密码">
+        <label for=""><img src="" alt="" srcset=""><span></span></label>
+    </div>
+    <script>
+        var pwd = document.querySelector('input');
+        var spa = document.querySelector('span');
+        var img = document.querySelector('img');
+        pwd.onblur = function () {
+            if (pwd.value.length < 6) {
+                spa.innerHTML = '密码太短,请输入6位以上字符';
+                spa.className = 'wrong';
+                img.src = '../img/images/wrong.png';
+                img.style.visibility = 'visible';
+            }
+            else {
+                spa.innerHTML = '密码格式正确';
+                spa.className = 'right';
+                img.src = '../img/images/right.png';
+                img.style.visibility = 'visible';
+            }
+        }
+    </script>
+</body>
+
+</html>

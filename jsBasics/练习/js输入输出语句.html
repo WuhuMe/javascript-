@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>输入输出</title>
+			<script type="text/javascript">
+				var age;
+				function scan(){
+					age = prompt('请输入年龄');//prompt弹出框输入
+					outprint();
+				}
+				function outprint(){
+					document.getElementById("age").innerHTML = age;
+					alert(age);//弹出警示框
+					console.log("控制台输出"+age);//控制台输出
+				}
+			</script>
+	</head>
+	<body>
+		<input type="button" name="" id="" value="输入" onclick="scan()" />
+		<p id="age"></p>
+	</body>
+</html>

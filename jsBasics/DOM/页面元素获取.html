@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>11111</li>
+        <li>22222</li>
+        <li>33333</li>
+        <li>44444</li>
+    </ul>
+    <ol>
+        <li>？？？？？？</li>
+        <li>？？？？？？</li>
+        <li>？？？？？？</li>
+        <li>？？？？？？</li>
+    </ol>
+    <script>
+        var lis = document.getElementsByTagName('li');
+
+        for (var i = 0; i < lis.length; i++) {
+            console.log(lis[i]);
+        }
+        console.log('---------------------------------');
+        //  console.dir(lis);
+        //父元素获取子元素
+        var ol = document.getElementsByTagName('ol');
+        console.log(ol[0].getElementsByTagName('li'));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*   document.addEventListener('DOMContentLoaded', function () {//是DOM加载完毕，不包含坨 flash css等就可以执行 加载速度逼load更快一些
+               alert(1);
+           });
+           window.addEventListener('load', function () {//等页面内容全部加载完毕，包含页面DOM元素 图片 flash css等等
+               alert(2);
+           });*/
+    </script>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector('div');
+        window.onresize = function () {
+            if (window.innerWidth < 900) {
+                div.style.display = 'none';
+            } else {
+                div.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p></p>
+
+    <script>
+        var p = document.querySelector('p');
+        if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|ios|iPod|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Sybian|Windows Phone)/i))) {
+            /*  window.location.href = "";//手机；*/
+            p.innerHTML = '手机';
+        } else {
+            /*  window.location.href = "";//电脑*/
+            p.innerHTML = '电脑';
+        }
+    </script>
+</body>
+
+</html>

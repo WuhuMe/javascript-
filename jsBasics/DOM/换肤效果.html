@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .flex-container {
+            margin: 100px auto;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: center;
+            justify-content: center;
+            width: 450px;
+            height: 75px;
+            background: #000;
+        }
+
+        .flex-item {
+            background-color: #fff;
+            margin: 5px;
+            width: 101.6px;
+            height: 64.1px;
+            z-index: 1;
+        }
+
+        img {
+            width: 100px;
+            border: 1px solid wheat;
+            z-index: 0;
+        }
+
+        body {
+            background: url('../img/day2/images/1.jpg');
+        }
+    </style>
+    <script>
+
+        function setImg() {
+            var imgs = document.querySelectorAll('img');
+            for (var i = 0; i < imgs.length; i++) {
+                imgs[i].src = '../img/day2/images/' + (i + 1) + '.jpg';
+            }
+        }
+    </script>
+</head>
+
+<body onload="setImg()">
+    <div class="flex-container">
+        <div class="flex-item"><img src="" alt=""></div>
+        <div class="flex-item"><img src="" alt=""></div>
+        <div class="flex-item"><img src="" alt=""></div>
+        <div class="flex-item"><img src="" alt=""></div>
+    </div>
+    <script>
+        var divs = document.querySelector('.flex-container').querySelectorAll('img');
+        console.log(divs[0]);
+        console.log(divs[1]);
+        console.log(divs[2]);
+        console.log(divs[3]);
+
+
+        for (var i = 0; i < divs.length; i++) {
+
+            divs[i].onclick = function () {
+                console.log();
+                for (var i = 0; i < divs.length; i++) {
+
+                    document.body.style.backgroundImage = '';
+                }
+                document.body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+</body>
+
+</html>
