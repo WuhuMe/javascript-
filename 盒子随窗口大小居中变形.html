@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子随动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            position: absolute;
+
+            background-color: lightblue;
+        }
+
+        .son {
+            position: absolute;
+
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+
+        window.addEventListener('load', function () {
+            var father = document.querySelector('.father');
+            var son = father.children[0];
+
+            father.style.width = window.innerWidth * 0.5 + 'px';
+            father.style.height = window.innerHeight * 0.5 + 'px';
+            father.style.top = window.innerHeight * 0.5 - father.clientHeight * 0.5 + 'px';
+            father.style.left = window.innerWidth * 0.5 - father.clientWidth * 0.5 + 'px';
+            son.style.width = father.clientWidth * 0.5 + 'px';
+            son.style.height = father.clientHeight * 0.5 + 'px';
+            son.style.top = father.clientHeight * 0.25 + 'px';
+            son.style.left = father.clientWidth * 0.25 + 'px';
+            window.addEventListener('resize', function () {
+
+                father.style.width = window.innerWidth * 0.5 + 'px';
+                father.style.height = window.innerHeight * 0.5 + 'px';
+                father.style.top = window.innerHeight * 0.5 - father.clientHeight * 0.5 + 'px';
+                father.style.left = window.innerWidth * 0.5 - father.clientWidth * 0.5 + 'px';
+                son.style.width = father.clientWidth * 0.5 + 'px';
+                son.style.height = father.clientHeight * 0.5 + 'px';
+                son.style.top = father.clientHeight * 0.25 + 'px';
+                son.style.left = father.clientWidth * 0.25 + 'px';
+
+            })
+
+        })
+
+    </script>
+</body>
+
+</html>
